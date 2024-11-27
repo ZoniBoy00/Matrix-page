@@ -15,7 +15,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/ZoniBoy00/matrix-page.git
+   git clone https://github.com/ZoniBoy00/Matrix-page.git
    ```
 
 2. **Open `index.html`**:
