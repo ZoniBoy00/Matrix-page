@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix Effect</title>
+    <title>Matrix Effect with Music Player</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
 </head>
 <body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="music.mp3" type="audio/mp3">
+        <source src="music.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Transparent Music Player -->
+    <div id="musicPlayer" class="music-player">
+        <button id="playPauseButton">Pause</button>
+        <label for="volumeControl">Volume:</label>
+        <input id="volumeControl" type="range" min="0" max="1" step="0.1" value="1">
+    </div>
+
+    <!-- Matrix Canvas -->
     <canvas id="matrix"></canvas>
+
+    <!-- Matrix-themed Popup -->
     <div id="hintPopup" class="popup">
         <span class="close" onclick="closePopup()">&times;</span>
         <p>Hint: Inspect the page source for clues.</p>
     </div>
 
-    <!-- Hidden hint in HTML -->
+    <!-- Hidden Hints -->
     <div style="display: none;">Hint: https://shorturl.at/AKD9w</div>
     <div style="display: none;">Hint: Or maybe it's hidden inside the styles.css file?</div>
     <div style="display: none;">Hint: Inspect the page source for clues.</div>

@@ -1,3 +1,4 @@
+// Canvas setup
 const canvas = document.getElementById('matrix');
 const context = canvas.getContext('2d');
 
@@ -15,6 +16,7 @@ const columns = canvas.width / fontSize;
 
 const rainDrops = [];
 
+// Initialize raindrops
 for (let x = 0; x < columns; x++) {
     rainDrops[x] = 1;
 }
@@ -38,6 +40,27 @@ function draw() {
 }
 
 setInterval(draw, 30);
+
+// Music player functionality
+const music = document.getElementById('backgroundMusic');
+const playPauseButton = document.getElementById('playPauseButton');
+const volumeControl = document.getElementById('volumeControl');
+
+// Play/Pause Button
+playPauseButton.addEventListener('click', () => {
+    if (music.paused) {
+        music.play();
+        playPauseButton.textContent = 'Pause';
+    } else {
+        music.pause();
+        playPauseButton.textContent = 'Play';
+    }
+});
+
+// Volume Control
+volumeControl.addEventListener('input', () => {
+    music.volume = volumeControl.value;
+});
 
 // Hidden source code
 const hiddenSourceCode = `
